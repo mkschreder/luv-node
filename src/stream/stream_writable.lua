@@ -16,8 +16,9 @@ limitations under the License.
 
 --]]
 
+local exports = {}; 
 local core = require('core')
-local Stream = require('./stream_core').Stream
+local Stream = require('stream/stream_core').Stream
 local Error = core.Error
 
 local onwrite, writeAfterEnd, validChunk, writeOrBuffer, clearBuffer,
@@ -545,3 +546,5 @@ end
 exports.WriteReq = WriteReq
 exports.WritableState = WritableState
 exports.Writable = Writable
+
+return exports; 

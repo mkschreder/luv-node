@@ -22,8 +22,9 @@ limitations under the License.
 --stream. Streams created by observe() do not affect back-pressure.
 --]]
 
-local Transform = require('./stream_transform').Transform
-local Readable = require('./stream_readable').Readable
+local exports = {}; 
+local Transform = require('stream/stream_transform').Transform
+local Readable = require('stream/stream_readable').Readable
 
 local Observable = Transform:extend()
 
@@ -54,3 +55,5 @@ function Observable:observe()
 end
 
 exports.Observable = Observable
+
+return exports; 

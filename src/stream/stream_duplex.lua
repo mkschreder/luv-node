@@ -15,9 +15,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 --]]
+
+local exports = {}; 
+
 local utils = require('utils')
-local Readable = require('./stream_readable').Readable
-local Writable = require('./stream_writable').Writable
+local Readable = require('stream/stream_readable').Readable
+local Writable = require('stream/stream_writable').Writable
 
 local Duplex = Readable:extend()
 
@@ -74,3 +77,5 @@ function onend(self)
 end
 
 exports.Duplex = Duplex
+
+return exports; 

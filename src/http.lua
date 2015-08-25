@@ -16,6 +16,8 @@ limitations under the License.
 
 --]]
 
+local exports = {}; 
+
 exports.name = "luvit/http"
 exports.version = "1.2.2"
 exports.dependencies = {
@@ -576,3 +578,5 @@ function exports.get(options, onResponse)
   req:done()
   return req
 end
+
+return exports; 

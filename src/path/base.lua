@@ -16,6 +16,8 @@ limitations under the License.
 
 --]]
 
+local exports = {}; 
+
 local Object = require('core').Object
 
 local Path = Object:extend()
@@ -398,3 +400,5 @@ end
 
 exports.nt = WindowsPath:new()
 exports.posix = PosixPath:new()
+
+return exports; 

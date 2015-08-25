@@ -22,7 +22,8 @@ limitations under the License.
 // Every written chunk gets output as-is.
 --]]
 
-local Transform = require('./stream_transform').Transform
+local exports = {}; 
+local Transform = require('stream/stream_transform').Transform
 
 local PassThrough = Transform:extend()
 
@@ -40,3 +41,4 @@ function PassThrough:_transform(chunk, cb)
 end
 
 exports.PassThrough = PassThrough
+return exports; 

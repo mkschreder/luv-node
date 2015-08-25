@@ -18,6 +18,8 @@ limitations under the License.
 
 --- luvit thread management
 
+local exports = {}; 
+
 exports.name = "luvit/thread"
 exports.version = "0.1.1"
 exports.license = "Apache 2"
@@ -26,7 +28,7 @@ exports.description = "thread module for luvit"
 exports.tags = {"luvit", "thread"}
 
 local uv = require('uv')
-local bundlePaths = require('luvi').bundle.paths
+--local bundlePaths = require('luvi').bundle.paths
 
 exports.start = function(thread_func, ...)
   local dumped = type(thread_func)=='function'
@@ -35,17 +37,17 @@ exports.start = function(thread_func, ...)
   local function thread_entry(dumped, bundlePaths, ...)
 
     -- Convert paths back to table
-    local paths = {}
-    for path in bundlePaths:gmatch("[^;]+") do
-      paths[#paths + 1] = path
-    end
+    --local paths = {}
+    --for path in bundlePaths:gmatch("[^;]+") do
+    --  paths[#paths + 1] = path
+    --end
 
     -- Load luvi environment
-    local _, mainRequire = require('luvibundle').commonBundle(paths)
+    --local _, mainRequire = require('luvibundle').commonBundle(paths)
 
     -- Run function with require injected
     local fn = loadstring(dumped)
-    getfenv(fn).require = mainRequire
+    --getfenv(fn).require = mainRequire
     fn(...)
 
     -- Start new event loop for thread.
@@ -65,3 +67,5 @@ end
 exports.self = function()
     return uv.thread_self()
 end
+
+return exports; 

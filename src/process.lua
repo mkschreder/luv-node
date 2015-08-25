@@ -16,6 +16,8 @@ limitations under the License.
 
 --]]
 
+local exports = {}; 
+
 exports.name = "luvit/process"
 exports.version = "1.1.1-7"
 exports.dependencies = {
@@ -31,7 +33,6 @@ exports.homepage = "https://github.com/luvit/luvit/blob/master/deps/process.lua"
 exports.description = "Node-style global process table for luvit"
 exports.tags = {"luvit", "process"}
 
-local env = require('env')
 local hooks = require('hooks')
 local os = require('os')
 local timer = require('timer')
@@ -67,7 +68,7 @@ setmetatable(lenv, {
     end
   end,
   __index = function(table, key)
-    return env.get(key)
+    return os.getenv(key)
   end,
   __newindex = function(table, key, value)
     if value then

@@ -55,6 +55,7 @@ SOFTWARE.
 
 --]==]
 
+local exports = {}; 
 -- global dependencies:
 local pairs, type, tostring, tonumber, getmetatable, setmetatable =
       pairs, type, tostring, tonumber, getmetatable, setmetatable
@@ -728,3 +729,4 @@ end
 json.parse = json.decode
 json.stringify = json.encode
 
+return exports; 

@@ -28,7 +28,7 @@ exports.homepage = "https://github.com/luvit/luvit/blob/master/deps/timer.lua"
 exports.description = "Javascript style setTimeout and setInterval for luvit"
 exports.tags = {"luvit", "timer"}
 
-local uv = require('luv')
+local uv = require('uv')
 local Object = require('core').Object
 local bind = require('utils').bind
 

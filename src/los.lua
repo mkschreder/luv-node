@@ -16,26 +16,5 @@ limitations under the License.
 
 --]]
 
-exports.name = "luvit/los"
-exports.version = "1.0.0-1"
-exports.license = "Apache 2"
-exports.homepage = "https://github.com/luvit/luvit/blob/master/deps/los.lua"
-exports.description = "Tiny helper to get os name in luvit."
-exports.tags = {"os"}
-
-local jit = require('jit')
-
-local map = {
-  ['Windows'] = 'win32',
-  ['Linux'] = 'linux',
-  ['OSX'] = 'darwin',
-  ['BSD'] = 'bsd',
-  ['POSIX'] = 'posix',
-  ['Other'] = 'other'
-}
-
-local function type()
-  return map[jit.os]
-end
-
-exports.type = type
+-- we are using normal lua 
+return os; 

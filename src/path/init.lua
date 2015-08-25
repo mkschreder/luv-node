@@ -16,6 +16,8 @@ limitations under the License.
 
 --]]
 
+local exports = {}; 
+
 exports.name = "luvit/path"
 exports.version = "1.0.0-3"
 exports.dependencies = {
@@ -28,7 +30,7 @@ exports.description = "A port of node.js's path module for luvit."
 exports.tags = {"luvit", "path"}
 
 local los = require('los')
-local path_base = require('./base')
+local path_base = require('path/base')
 
 local function setup_meta(ospath)
   local path = exports
@@ -46,8 +48,9 @@ local function setup_meta(ospath)
   return path
 end
 
-if los.type() == "win32" then
-  return setup_meta(path_base.nt)
-else
-  return setup_meta(path_base.posix)
-end
+--if los.type() == "win32" then
+--  return setup_meta(path_base.nt)
+--else
+return setup_meta(path_base.posix)
+--end
+

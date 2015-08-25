@@ -26,7 +26,7 @@ exports.tags = {"colors", "tty"}
 exports.license = "Apache 2"
 exports.author = { name = "Tim Caswell" }
 
-local uv = require('luv')
+local uv = require('uv')
 --local env = require('env')
 
 local prettyPrint, dump, strip, color, colorize, loadColors

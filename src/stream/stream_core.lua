@@ -15,6 +15,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 --]]
+
+local exports = {}; 
 local core = require('core')
 
 
@@ -122,3 +124,5 @@ function Stream:pipe(dest, options)
 end
 
 exports.Stream = Stream
+
+return exports; 

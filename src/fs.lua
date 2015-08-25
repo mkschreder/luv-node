@@ -15,6 +15,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 --]]
+
+local exports = {}; 
+
 exports.name = "luvit/fs"
 exports.version = "1.2.2"
 exports.dependencies = {
@@ -694,3 +697,5 @@ function fs.appendFileSync(path, data)
   if not written then fs.close(fd) ; return err end
   fs.close(fd)
 end
+
+return exports; 
